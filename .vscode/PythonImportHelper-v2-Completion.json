@@ -41,6 +41,14 @@
         "documentation": {}
     },
     {
+        "label": "HttpResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
         "label": "get_wsgi_application",
         "importPath": "django.core.wsgi",
         "description": "django.core.wsgi",
@@ -224,8 +232,17 @@
         "kind": 5,
         "importPath": "todo_main.urls",
         "description": "todo_main.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n]",
+        "peekOfCode": "urlpatterns = [\n    path(\"admin/\", admin.site.urls),\n    path(\"\", views.home, name=\"home\"),\n]",
         "detail": "todo_main.urls",
+        "documentation": {}
+    },
+    {
+        "label": "home",
+        "kind": 2,
+        "importPath": "todo_main.views",
+        "description": "todo_main.views",
+        "peekOfCode": "def home(request):\n    return HttpResponse(\"<h1>Home</h1>\")",
+        "detail": "todo_main.views",
         "documentation": {}
     },
     {
