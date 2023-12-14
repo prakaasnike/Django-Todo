@@ -105,6 +105,14 @@
         "documentation": {}
     },
     {
+        "label": "Task",
+        "importPath": "todo.models",
+        "description": "todo.models",
+        "isExtraImport": true,
+        "detail": "todo.models",
+        "documentation": {}
+    },
+    {
         "label": "get_wsgi_application",
         "importPath": "django.core.wsgi",
         "description": "django.core.wsgi",
@@ -144,7 +152,7 @@
         "kind": 6,
         "importPath": "todo.models",
         "description": "todo.models",
-        "peekOfCode": "class Task(models.Model):\n    task = models.CharField(max_length=50)\n    is_completed = models.BooleanField(default=False)\n    created_at = models.DateTimeField(auto_now_add=True)\n    updated_at = models.DateTimeField(auto_now=True)\n    def __str__(self):\n        return self.task",
+        "peekOfCode": "class Task(models.Model):\n    task = models.CharField(max_length=50)\n    is_completed = models.BooleanField(default=False)\n    created_at = models.DateTimeField(auto_now_add=True)\n    updated_at = models.DateTimeField(auto_now=True)\n    def __str__(self):\n        return   self.task",
         "detail": "todo.models",
         "documentation": {}
     },
@@ -324,7 +332,7 @@
         "kind": 2,
         "importPath": "todo_main.views",
         "description": "todo_main.views",
-        "peekOfCode": "def home(request):\n    return render(request, \"home.html\")",
+        "peekOfCode": "def home(request):\n    tasks = Task.objects.filter(is_completed=False)\n    context ={\n        'tasks': tasks,\n    }\n    return render(request, 'home.html', context)",
         "detail": "todo_main.views",
         "documentation": {}
     },
