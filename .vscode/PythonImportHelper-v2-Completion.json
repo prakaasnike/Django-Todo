@@ -139,6 +139,15 @@
         "documentation": {}
     },
     {
+        "label": "TaskAdmin",
+        "kind": 6,
+        "importPath": "todo.admin",
+        "description": "todo.admin",
+        "peekOfCode": "class TaskAdmin(admin.ModelAdmin):\n    list_display = ('task','is_completed','updated_at','created_at')\n    search_fields = ('task',)\n# Register your models here.\nadmin.site.register(Task,TaskAdmin)",
+        "detail": "todo.admin",
+        "documentation": {}
+    },
+    {
         "label": "TodoConfig",
         "kind": 6,
         "importPath": "todo.apps",
